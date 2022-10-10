@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
+
+
+:root {
+    --primary: #0d6efd;
+    --dark : #21252f;
+    --body: #888;
+    --box-shadow:0 8px 22px rgba(0,0,0,0.2);
+}
+
+body{
+    font-family: 'Sora', sans-serif;
+    line-height: 1.7;
+    /* varを使うことでrootで指定した色(今回はbodyの色を使いたいからvar(--body))を設定する事ができる
+    そうすることで色味が統一できる */
+    color: var(--body);
+}
+
+a{
+    color: var(--dark);
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6,.display-4{
+    color: var(--dark);
+    font-weight: 700;
+}
+
+section{
+padding-top: 120px;
+padding-bottom: 120px;
+}
+
+.navbar .nav-link {
+    color: rgb(79, 76, 76) !important;
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 15px;
+}
+
+.btn {
+    padding: 14px 18px;
+    border-width: 2px;
+    border-radius: 0;
+}
+
+
+.hero {
+    background-image: url("../static/img/9699A4A1-3397-48A4-ADA7-4350F7BD1370line_455302401469067.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 2;
+    min-height: 300px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(37,39, 71, 0.2);
+    z-index: -1;
+}
+
+.card-effect{
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+    padding: 25px;
+    transition: all 0.35s ease;
+}
+
+.card-effect:hover {
+    box-shadow: none;
+    transform: translateY(15px);
+}
+
+.iconbox{
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: white;
+    font-size: 40px;
+    border-radius: 100px;
+    flex: none;
+    margin-left: 30px;
+}
+
+.carrycontent{
+    font-size: 100px;
+}
+
+.service{
+    position: relative;
+    overflow: hidden;
+}
+
+.service::after{
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background-color: var(--primary);
+    /* background-image: url(""); */
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.35s ease;
+    z-index: -1;
+}
+
+.service:hover h5,
+.service:hover p{
+    color: white;
+}
+
+.service:hover::after{
+    opacity: 1;
+    top: 0;
+}
+
+.col-img{
+    background-image: url("../static/img/牛さん.jpg");
+    background-position: center;
+    background-size: cover;
+    min-height: 700px;
+}
+
+.footer-top{
+    background-color: var(--dark);
+    padding: 90px;
+    padding-bottom: 90px;
+}
+
+.footer-top a {
+    color: var(--body);
+}
+
+.footer-top a:hover{
+    color: #fff;
+}

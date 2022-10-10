@@ -1,0 +1,147 @@
+<!-- {% extends "base.html" %}
+
+{% block content %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- py-3 はpaddingのy軸方向(top,bottom)に３px -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-#41464b py-3 ">
+        <!-- fruid削除　width自動反映させる為 -->
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h2 class="text-secondary pt-1">チーム　おたけ</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="../templates/base.html">Home</a>
+                <!-- </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#services">サービス</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#app">アプリ紹介</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="../templates/mypage.html">マイページ</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../templates/login.html">ログイン</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../templates/signup.html">新規登録</a>
+                </li>
+            </form>
+            </div>
+        </div>
+    </nav>
+    <!-- 変更箇所 ここから-->
+    <section id="contact" class="bg-light">
+        <div class="container ">
+            <form action="" class="row">
+                <h2 class="text-secondary  text-center mb-3">運び登録</h2>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-md-8 pt-4 offset-md-1">
+                <h6 class="text-success">map</h6>
+                
+                <div class="feauture d-flex justify-content-evenly mt-5">
+                    <div class="iconbox">
+                        <i class='bx bxs-plane-take-off'></i>
+                    </div>
+                    <div class="carrycontent py-2">
+                        <h5 class="fs-1 ">出発</h5>
+                    </div>
+                    <h5 class="fs-1 py-2">道の駅宗像</h5>
+                </div>
+
+                <div class="feauture d-flex justify-content-evenly fs-1 mt-5">
+                    <div class="iconbox">
+                        <i class='bx bxs-plane-land' ></i>
+                    </div>
+                    <div class="carrycontent ms-1 py-2">
+                        <h5 class="fs-1">到着</h5>
+                    </div>
+                    <!-- formに変更 -->
+                    <h5 class="fs-1 py-2"></h5>
+                </div>
+                <div class="feauture d-flex justify-content-evenly fs-1 mt-5">
+                    <div class="iconbox">
+                        <i class='bx bx-yen'></i>
+                    </div>
+                    <div class="carrycontent py-2">
+                        <h5 class="fs-1">金額</h5>
+                    </div>
+                    <!-- Flaskでテーブルから金額取得 -->
+                    <h5 class="fs-1 py-2"></h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- マップの機能入れ込む -->
+
+     <!-- 変更箇所 ここまで-->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2 class="text-white">卒業制作<br>チームおたけページ</h2>
+                    </div>
+                    <div class="col-md-2">
+                        <h5 class="text-white">サイトマップ</h5>
+                        <ul>
+                            <li><a href="#home">HOME</a></li>
+                            <li><a href="#serivices">サービス</a></li>
+                            <li><a href="#app">アプリ紹介</a></li>
+                            <li><a href="../templates/mypage.html">マイページ</a></li>
+                            <li><a href="../templates/signup.html">新規登録</a></li>
+                            <li><a href="../templates/login.html">ログイン</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <h5 class="text-white">概要とか</h5>
+                        <ul>
+                            <li><a href="#">運賃表</a></li>
+                            <li><a href="#">ルール</a></li>
+                            <li><a href="#">だべろうぜ</a></li>
+                        </ul>
+                    </div>
+                    <!-- <div class="col-md-2">
+                        <h5 class="text-white">なんか</h5>
+                        <ul>
+                            <li><a href="#">test1</a></li>
+                            <li><a href="#">test2</a></li>
+                            <li><a href="#">test3</a></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+     crossorigin="anonymous">
+    </script>
+
+
+</body>
+</html>
+
+<!-- {% endblock %} -->

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- {% for tweet in html_tweet_r %} -->
+<!-- {% endfor %} -->
+<div class="hero vh-100 d-flex align-items-center" id="home">
+    <!-- containerクラスを設定することでBootstrapのレスポンシブデザインが反映できる -->
+    <div class="container">
+        <!-- rowクラスを設定する事でここから下の子要素がflex(横並びになる) -->
+        <div class="row">
+            <!-- カラムを１２分割した時の12分の７の割合で表示するcolがカラムlgは以上7は12分の７ -->
+            <div class="col-lg-7 mx-auto text-center">
+                <!-- display1~4まで選べる1から順に小さくなるイメージ -->
+                <h1 class="display-4 text-white">toppage</h1>
+                <p class="text-white my-3">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas temporibus, accusamus ea quidem accusantium magni.
+                    Magnam necessitatibus quis veniam perspiciatis laborum? Fugiat ad provident facilis consequatur magni quis, exercitationem dolores?
+                </p>
+                <a href="#" class="btn btn-primary me-2">Go Home</a>
+                <a href="#" class="btn btn-outline-light">contant</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- service section -->
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+                <h6 class="text-success">SERVICES</h6>
+                <h1>services</h1>
+                <p>配送先情報や地域農家の方々交流ができるコミュニティに参加できます！</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- col=横幅を１２で割った時(ブレイクポイントの指定がboostrapにはあるlg-4だと12/4で３分割 -->
+            <!-- col-sm-6 だと１２/6で２分割 -->
+            <div class="col-lg-4 col-sm-6">
+                <div class="service card-effect">
+                    <div class="iconbox">
+                        <i class='bx bxs-coffee-bean'></i>
+                    </div>
+                    <h5>Service</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, minima pariatur aperiam optio unde sed.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+</section>
+
+<!-- {% endblock %} -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+ crossorigin="anonymous">
+</script>
+
+{% endblock %}
