@@ -9,7 +9,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
     crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style.css">
     <title>卒業制作チーム おたけ</title>
 </head>
 <body>
@@ -26,23 +26,26 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#home">Home</a>
+                <a class="nav-link" href="/home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#services">サービス</a>
+                <a class="nav-link" href="/home#services">サービス</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#app">アプリ紹介</a>
+                <a class="nav-link" href="/home#app">アプリ紹介</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../templates/mypage.html">マイページ</a>
-            </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../templates/login.html">ログイン</a>
+                <a class="nav-link" href="/mypage">マイページ</a>
               </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/login">ログイン</a>
+              </li> -->
               <li class="nav-item">
-                <a class="nav-link" href="../templates/signup.html">新規登録</a>
+                <a class="nav-link" href="/signup">新規登録</a>
               </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/logout" >ログアウト</a>
+              </li> -->
            <!-- <li class="nav-item">
                 <a class="nav-link" href="#">アババ</a>
               </li>
@@ -68,180 +71,13 @@
           </div>
         </div>
       </nav>
-      <!-- {% block content %}
-
-      {% endblock %} -->
-    <!-- hero section -->
-    <div class="hero vh-100 d-flex align-items-center" id="home">
-        <!-- containerクラスを設定することでBootstrapのレスポンシブデザインが反映できる -->
-        <div class="container">
-            <!-- rowクラスを設定する事でここから下の子要素がflex(横並びになる) -->
-            <div class="row">
-
-                <!-- カラムを１２分割した時の12分の７の割合で表示するcolがカラムlgは以上7は12分の７ -->
-                <div class="col-lg-7 mx-auto text-center">
-                    <!-- display1~4まで選べる1から順に小さくなるイメージ -->
-                    <h1 class="display-5 text-white">運び・運ばれ<br>だべってみらんね</h1>
-                    <p class="text-white my-3">
-                        栽培した物ば運んで・運ばれて・たまには地域の方とのコミュニケーションばとってみらんね
-                    </p>
-                    <!-- <a href="#" class="btn btn-primary me-2">Go Home</a>
-                    <a href="#" class="btn btn-outline-light">contant</a> -->
-                </div>
-
-            </div>
-        </div>
     </div>
+    <!-- ここから -->
+    {% block content %}
 
-    <!-- service section -->
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-success">何かカードの内容がわかる文言</h6>
-                    <h1>サービス</h1>
-                    <p>配送先情報や地域農家の方々交流ができる<br>コミュニティに参加できます！</p>
-                </div>
-            </div>
+    <!-- ここまで -->
+    {% endblock %}
 
-            <div class="row g-4">
-                <!-- col=横幅を１２で割った時(ブレイクポイントの指定がboostrapにはあるlg-4だと12/4で３分割 -->
-                <!-- col-sm-6 だと１２/6で２分割 -->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bxs-coffee-bean'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">運ばれ予約1</h5>
-                        <p>
-                            運んでほしい人は<br>
-                            こちらから運ばれ予約を行なってください。
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bxs-coffee-bean'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">運ばれ予約2</h5>
-                        <p>
-                            運んでほしい人は<br>
-                            こちらから運ばれ予約を行なってください。
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bxs-coffee-bean'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">運ばれ予約3</h5>
-                        <p>
-                            運んでほしい人は<br>
-                            こちらから運ばれ予約を行なってください。
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bxs-coffee-bean'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">運ばれ予約4</h5>
-                        <p>
-                            運んでほしい人は<br>
-                            こちらから運ばれ予約を行なってください。
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bxs-coffee-bean'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">運ばれ予約5</h5>
-                        <p>
-                            運んでほしい人は<br>
-                            こちらから運ばれ予約を行なってください。
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bxs-coffee-bean'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">運ばれ予約6</h5>
-                        <p>
-                            運んでほしい人は<br>
-                            こちらから運ばれ予約を行なってください。
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- feautures section -->
-    <section id="app" class="row py-0 bg-light">
-        <div class="col-lg-6 col-img"></div>
-        <div class="col-lg-6">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 pt-4 offset-md-1">
-                        <h6 class="text-success">アプリ紹介</h6>
-                        <p>このアプリは農作物を格安で搬送できて地域のコミュニティも形成してくれます！</p>
-
-                        <div class="feauture d-flex mt-5">
-                            <div class="iconbox me-3">
-                                <i class='bx bxs-universal-access'></i>
-                            </div>
-                            <div>
-                                <h5>運ぶ人</h5>
-                                <p>帰りの空便を有効活用したくないですか？<br>そんなあなたは空便でお小遣いを稼ぎましょう！</p>
-                            </div>
-                        </div>
-                        <div class="feauture d-flex mt-5">
-                            <div class="iconbox me-3">
-                                <i class='bx bxs-universal-access'></i>
-                            </div>
-                            <div>
-                                <h5>運んで欲しい人</h5>
-                                <p>作物の運送どうされていますか？<br>格安で運送してくれる人を探してみましょう！</p>
-                            </div>
-                        </div>
-                        <div class="feauture d-flex mt-5">
-                            <div class="iconbox me-3">
-                                <i class='bx bxs-universal-access'></i>
-                            </div>
-                            <div>
-                                <h5>地域の方々</h5>
-                                <p>農作物を運ぶ人も運ばれる人もたまには<br>お話ししたいときがありますよね！？<br>そんな時はお話ししにいきましょう！</p>
-                            </div>
-                        </div>
-                        <div class="feauture d-flex mt-5">
-                            <div class="iconbox me-3">
-                                <i class='bx bxs-universal-access'></i>
-                            </div>
-                            <div>
-                                <h5>助け合いの気持ち</h5>
-                                <p>運営していくにあたり皆さんの協力が必要不可欠です。<br>ルールを守って利用しましょう。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="oneword">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto text-center">
-                    <h5>仕事場からで疲れていませんか？<br>おしゃべりして仕事から離れるのも大切ですよ！ </h5>
-    </section>
     <footer>
         <div class="footer-top">
             <div class="container">
@@ -255,9 +91,9 @@
                             <li><a href="#home">HOME</a></li>
                             <li><a href="#serivices">サービス</a></li>
                             <li><a href="#app">アプリ紹介</a></li>
-                            <li><a href="../templates/mypage.html">マイページ</a></li>
-                            <li><a href="../templates/signup.html">新規登録</a></li>
-                            <li><a href="../templates/login.html">ログイン</a></li>
+                            <li><a href="/mypage">マイページ</a></li>
+                            <li><a href="/signup">新規登録</a></li>
+                            <li><a href="/login">ログイン</a></li>
                         </ul>
                     </div>
                     <div class="col-md-2">
@@ -268,14 +104,6 @@
                             <li><a href="#">だべろうぜ</a></li>
                         </ul>
                     </div>
-                    <!-- <div class="col-md-2">
-                        <h5 class="text-white">なんか</h5>
-                        <ul>
-                            <li><a href="#">test1</a></li>
-                            <li><a href="#">test2</a></li>
-                            <li><a href="#">test3</a></li>
-                        </ul>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -283,7 +111,6 @@
 
 
     </div>
-    <!-- {% endblock %} -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
      crossorigin="anonymous">
