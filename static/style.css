@@ -70,7 +70,7 @@ padding-bottom: 120px;
     box-shadow: var(--box-shadow);
     background-color: #fff;
     padding: 25px;
-    transition: all 0.35s ease;
+    transition: all 0.1s ease;
 }
 
 .card-effect:hover {

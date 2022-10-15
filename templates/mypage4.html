@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section id="contact" class="bg-light">
+        <div class="container ">
+            <form action="" class="row">
+                <h2 class="text-secondary  text-center mb-5">マイページ</h2>
+                <div class="row mx-md-n5">
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <a class="btn btn-secondary" href="/logout" role="button">ログアウト</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <section class="carry bg-light">
+        <div class="container ">
+            <form action="" class="row">
+                <h2 class="text-secondary  mb-10 display-1">予約一覧</h2>
+            </form>
+            
+            <div class="col-lg-7">
+                
+                <p class="fs-1">予約番号{{carry_list0[0]}}</p>
+                <ul class="fs-2">
+                    <li>商品名：{{carry_list0[2]}}</li>
+                    <li>商品箱数：{{carry_list0[3]}} 箱</li>
+                    <li>重量：{{carry_list0[4]}} kg</li>
+                    <li>配送時間：{{carry_list0[5]}}</li>
+                </ul>
+                <p class="fs-1">予約番号{{carry_list1[0]}}</p>
+                <ul class="fs-2">
+                    <li>商品名：{{carry_list1[2]}}</li>
+                    <li>商品箱数：{{carry_list1[3]}} 箱</li>
+                    <li>重量：{{carry_list1[4]}} kg</li>
+                    <li>配送時間：{{carry_list1[5]}}</li>
+                </ul>
+                <p class="fs-1">予約番号{{carry_list2[0]}}</p>
+                <ul class="fs-2">
+                    <li>商品名：{{carry_list2[2]}}</li>
+                    <li>商品箱数：{{carry_list2[3]}} 箱</li>
+                    <li>重量：{{carry_list2[4]}} kg</li>
+                    <li>配送時間：{{carry_list2[5]}}</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

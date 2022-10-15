@@ -1,4 +1,5 @@
 
+from calendar import leapdays
 from cgitb import html
 from crypt import methods
 from fileinput import filename
@@ -18,14 +19,27 @@ app.secret_key = "otakesan"
 def home():
     if "user_id" in session:
         return render_template('home.html')
-        
     else:
-        return render_template('base.html')
+        return render_template('secret.html')
     
 @app.route("/mypage")
 def mypage():
     if "user_id" in session:
-        return render_template('mypage.html')
+        conn = sqlite3.connect('teamotake.db')
+        c = conn.cursor()
+        user_id = session["user_id"]
+        c.execute("select * from reserve where member_id = ?",(user_id,))
+        carry_datas = c.fetchall()
+        if len(carry_datas) == 0 :
+            return render_template("mypage1.html")
+        elif len(carry_datas) ==3:
+            return render_template("mypage4.html", carry_list0 = carry_datas[0] ,carry_list1 = carry_datas[1],carry_list2 = carry_datas[2])
+        elif len(carry_datas) == 2:
+            return render_template("mypage3.html", carry_list0 = carry_datas[0] ,carry_list1 = carry_datas[1])
+        elif len(carry_datas) == 1:
+            return render_template("mypage2.html", carry_list0 = carry_datas[0]) 
+        else:
+            return render_template("mypage2.html", carry_list0 = carry_datas[0])
         
     else:
         return redirect('/login')
@@ -53,13 +67,10 @@ def signup_post():
 
     return redirect("/signup")
 
-
-#ログイン回り
 @app.route("/login")
 def login():
         return render_template("login.html")
 
-# セッションをここでとる
 @app.route("/login_py", methods=["POST"])
 def login_post():
     mail = request.form.get("mail")
@@ -83,10 +94,6 @@ def logout():
     session.pop("user_id",None)
     return redirect("/home")
 
-
-
-# 運搬先登録ページ表示
-# ここを固定ページにした方がいい気がする
 @app.route("/carry")
 def carry():
     if "user_id" in session:
@@ -95,51 +102,49 @@ def carry():
     else:
         return redirect("/login")
 
-# # 運搬先登録
-# @app.route("/carry_py",methods["POST"])
-# def carry_post():
-#     trans_id = request.form.get("")
-#     point_dep = request.form.get("")
-#     destnaition = request.form.get('')
-#     distance = request.form.get('')
-#     conn = sqlite3.connect('teamotake.db')
-#     c  = conn.cursor()
-#     c.execute("insert into transport values(null,?,?,?,?,?)", (trans_id,point_dep,destnaition,distance,))
-#     conn.commit()
-#     c.close()
+@app.route("/carry_py",methods=["POST"])
+def carry_post():
+    productname = request.form.get('productname')
+    productbox = request.form.get("productbox")
+    weight = request.form.get('weight')
+    deli_time = request.form.get('deli_time')
+    remarks = request.form.get('remarks')
+    conn = sqlite3.connect('teamotake.db')
+    c  = conn.cursor()
+    member_id = session["user_id"]
+    c.execute("insert into reserve values(null,1,?,?,?,?,?,?,null)", (productname,productbox,weight,deli_time,remarks,member_id))
+    conn.commit()
+    c.close()
 
-#     return redirect("/home")
+    return redirect("/home")
 
-
-# @app.route("/reserve")
-# def reserve():
-    # if "user_id" in session:
-    #     return render_template('reserve.html')
+@app.route("/carry1")
+def carry1():
+    if "user_id" in session:
+        return render_template('carryregi1.html')
         
-    # else:
-    #     return redirect("/login")
+    else:
+        return redirect("/login")
 
-# @app.route("reserve_py",methods=["POST"])
-# def reserve_py():
-#     res_id = request.form.get("")
-#     tran_id = request.form.get("")
-#     user_id = session[]
-#     date = datetime.datetime.now()
-#     delete_flag = request.form.get("")
-#     conn = sqlite3.connect("teamotake.db")
-#     c = conn.cursor()
-#     c.execute("insert into reserve values(null,?,?,?,?,?"),(res_id,tran_id)
-#     conn.commit()
-#     c.close()
-#     return redirect("/home")
+@app.route("/carry1_py",methods=["POST"])
+def carry_post1():
+    productname = request.form.get('productname')
+    productbox = request.form.get("productbox")
+    weight = request.form.get('weight')
+    deli_time = request.form.get('deli_time')
+    remarks = request.form.get('remarks')
+    conn = sqlite3.connect('teamotake.db')
+    c  = conn.cursor()
+    member_id = session["user_id"]
+    c.execute("insert into reserve values(null,1,?,?,?,?,?,?,null)", (productname,productbox,weight,deli_time,remarks,member_id))
+    conn.commit()
+    c.close()
 
-
+    return redirect("/home")
 
 @app.errorhandler(404)
 def page_not_found(error):
     return "見つからないよ"
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)

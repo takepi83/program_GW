@@ -23,13 +23,17 @@
                 </div>
                 <div class="col-md-7 mb-5">
                     <p>登録するパスワードを入力してください。</p>
-                    <input type="text" class="form-control" name="pass" placeholder="パスワード">
+                    <input type="text" class="form-control" name="pass" placeholder="パスワード" style="-webkit-text-security:disc;">
                 </div>
                 <span class="badge badge-danger text-danger text-center center-block"><p class="display-6">入力忘れないでね！</p></span>
-                <!-- 登録押した時のDB書き込み行う -->
-                <input type="submit" class="btn btn-success col-md-7" onclick="location.href='/home'" value="新規登録">
-                <p class="text-center mt-4 fs-3">登録済みの方は下記のボタンを押してください</p>
-                <input type="submit" class="btn btn-dark col-md-7 mt-4" onclick="location.href='/login'" value="ログイン">
+                
+                <div class="d-grid gap-2 col-7 mx-auto">
+                    <input type="submit" class="btn btn-success" value="新規登録" onclick="window.confirm('登録完了')">
+                
+                    <p class="text-center mt-4 fs-3">登録済みの方は下記のボタンを押してください</p>
+                    <a class="btn btn-secondary" href="/login" role="button">ログイン</a>
+                </div>
+                
             </form>
         </div>
     </section> 
